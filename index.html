@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Westline — Modern Urban Lounge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <img src="Logo_Server.png" alt="Westline Logo">
+      <span class="nav-logo-text">Westline</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#gallery">Feel the Vibe</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+    <a href="https://discord.gg/westline" target="_blank" class="nav-cta nav-cta-desktop">Join Discord</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-links">
+      <li><a href="#" class="active" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#features" onclick="closeMobileMenu()">Features</a></li>
+      <li><a href="#gallery" onclick="closeMobileMenu()">Feel the Vibe</a></li>
+      <li><a href="#events" onclick="closeMobileMenu()">Events</a></li>
+      <li><a href="#join" onclick="closeMobileMenu()">Join</a></li>
+    </ul>
+    <a href="https://discord.gg/westline" target="_blank" class="nav-cta mobile-cta">Join Discord</a>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section id="hero">
+    <p class="hero-eyebrow">
+        WESTLINE — AFTER HOURS
+    </p>
+
+    <h1 class="hero-title">
+        WESTLINE
+    </h1>
+
+  <div class="hero-divider"></div>
+
+    <p class="hero-desc">
+        Where conversations continue long after the city sleeps
+    </p>
+
+  <div class="hero-buttons">
+
+    <a href="https://discord.gg/westline"
+    target="_blank"
+    class="btn-primary">
+      Join Westline
+    </a>
+
+    <a href="#about"
+    class="btn-secondary"
+    id="explore-btn">
+      Feel The Atmosphere
+    </a>
+
+  </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       STAFF SHOWCASE (always visible)
+  ═══════════════════════════════════ -->
+  <section id="staff-showcase">
+
+    <!-- LEFT -->
+    <div class="staff-left">
+      <p class="staff-kicker">Core Team</p>
+      <h3 class="staff-big-title">
+        The People<br>Behind<br><span>Westline.</span>
+      </h3>
+      <p class="staff-big-desc">
+        Kenali para individu yang penuh dedikasi yang memimpin,
+        mengelola, dan membangun Westline menjadi komunitas yang kokoh
+        dan nyaman bagi semua orang.
+      </p>
+      <div class="staff-controls">
+        <button class="staff-nav prev">←</button>
+        <div class="staff-counter">
+          <span id="currentSlide">01</span>
+          <span style="opacity:0.35;">/</span>
+          <span>05</span>
+        </div>
+        <button class="staff-nav next">→</button>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="staff-right">
+      <div class="showcase-stack">
+
+        <!-- CARD 1 -->
+        <div class="showcase-card active">
+          <div class="showcase-glow"></div>
+          <img src="founder1.png" class="showcase-image">
+          <div class="showcase-overlay"></div>
+          <div class="showcase-content">
+            <span class="showcase-role founder">Founder</span>
+            <h3>Alza</h3>
+            <p class="showcase-user">@alza7</p>
+            <div class="showcase-line"></div>
+            <p class="showcase-bio">Founder of Westline.</p>
+            <a href="#" target="_blank" class="showcase-btn">Send Message</a>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="showcase-card second">
+          <div class="showcase-glow"></div>
+          <img src="founder2.png" class="showcase-image">
+          <div class="showcase-overlay"></div>
+          <div class="showcase-content">
+            <span class="showcase-role founder">Founder</span>
+            <h3>Cathyna</h3>
+            <p class="showcase-user">@walldorft</p>
+            <div class="showcase-line"></div>
+            <p class="showcase-bio">Co-founder of Westline.</p>
+            <a href="#" target="_blank" class="showcase-btn">Send Message</a>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="showcase-card third">
+          <div class="showcase-glow"></div>
+          <img src="council1.png" class="showcase-image">
+          <div class="showcase-overlay"></div>
+          <div class="showcase-content">
+            <span class="showcase-role council">Council</span>
+            <h3>aksa.</h3>
+            <p class="showcase-user">@m.diniiii</p>
+            <div class="showcase-line"></div>
+            <p class="showcase-bio">Core management team.</p>
+            <a href="#" target="_blank" class="showcase-btn">Send Message</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════ -->
+  <div id="main-content">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-container">
+        <div class="about-text">
+          <p class="section-label">About</p>
+          <h2 class="section-title">Bukan Sekadar<br>Server Discord.</h2>
+          <p class="about-desc">Westline adalah modern urban lounge — tempat di mana komunitas berkumpul bukan karena kewajiban, tapi karena suasananya. Clean, santai, dan terasa hidup.</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <span class="pillar-dot"></span>
+              <div>
+                <p class="pillar-title">Urban Atmosphere</p>
+                <p class="pillar-desc">Vibe kota malam yang tenang dan modern.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-dot"></span>
+              <div>
+                <p class="pillar-title">Late-Night Culture</p>
+                <p class="pillar-desc">Voice chat larut, musik pelan, obrolan panjang, bahkan nonton bareng .</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-dot"></span>
+              <div>
+                <p class="pillar-title">Community-Driven</p>
+                <p class="pillar-desc">Dibangun untuk para Member.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-dot"></span>
+              <div>
+                <p class="pillar-title">Clean Environment</p>
+                <p class="pillar-desc">Tanpa chaos, tanpa drama — cukup vibes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card">
+            <div class="about-card-glow"></div>
+            <img src="Logo_Server.png" alt="Westline" class="about-logo">
+            <p class="about-card-name">WESTLINE</p>
+            <p class="about-card-tag">Modern Urban Lounge</p>
+            <div class="about-card-line"></div>
+            <p class="about-card-quote">"Masuk, ambil role kalian, join VC, nikmati music session, dan jadilah bagian dari Westline."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="features-header">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">Apa yang Ada<br>di Westline?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎙️</span>
+          <h3 class="feature-title">Voice Lounge</h3>
+          <p class="feature-desc">VC malam yang tenang. Ngobrol santai, no drama, pure vibes.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎮</span>
+          <h3 class="feature-title">Gaming Sessions</h3>
+          <p class="feature-desc">Mabar bareng community — MLBB, Valorant, dan lainnya.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎵</span>
+          <h3 class="feature-title">Music Lounge</h3>
+          <p class="feature-desc">Playlist curated, music session malam, chill vibe sepanjang waktu.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📅</span>
+          <h3 class="feature-title">Events</h3>
+          <p class="feature-desc">Mini games, Tournament berbagai games, dan event rutin lainnya, dan kami juga menyediakan berbagai hadiah menarik bagi para pemenang..</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🤝</span>
+          <h3 class="feature-title">Community</h3>
+          <p class="feature-desc">Tempat cari teman baru, relasi, dan koneksi yang genuine.</p>
+        </div>
+      </div><!-- end features-grid -->
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="gallery-header">
+        <p class="section-label">Atmosphere</p>
+        <h2 class="section-title">Feel the Vibe</h2>
+        <p class="gallery-sub">Bukan sekadar server — ini sebuah suasana.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-bg">
+            <img src="gallery1.png" alt="Late Night VC" class="gallery-photo">
+            <div class="gallery-city-lights"></div>
+          </div>
+          <div class="gallery-caption">
+            <span>Late Night VC</span>
+            <p>Tempat terbaik untuk ngobrol larut malam</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">
+            <img src="gallery2.png" alt="Rooftop Vibes" class="gallery-photo">
+            <div class="gallery-city-lights"></div>
+          </div>
+          <div class="gallery-caption">
+            <span>Rooftop Vibes</span>
+            <p>Urban lounge, anytime, nongkrong</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">
+            <img src="gallery3.png" alt="Music Session" class="gallery-photo">
+            <div class="gallery-city-lights"></div>
+          </div>
+          <div class="gallery-caption">
+            <span>Music Session</span>
+            <p>Playlist curated, chill sepanjang malam</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">
+            <img src="gallery4.png" alt="Community Night" class="gallery-photo">
+            <div class="gallery-city-lights"></div>
+          </div>
+          <div class="gallery-caption">
+            <span>Community Night</span>
+            <p>Mabar, ngobrol, connect</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <div class="events-header">
+        <p class="section-label">Events</p>
+        <h2 class="section-title">Selected Nights</h2>
+        <p class="events-sub">Jangan sampai ketinggalan — stay tuned di server.</p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-badge">Upcoming</div>
+          <div class="event-date">
+            <span class="event-day">TBA</span>
+            <span class="event-month">2026</span>
+          </div>
+          <h3 class="event-title">MLBB Community Night</h3>
+          <p class="event-desc">5v5 custom match antar member Westline. Tunjukkan skill kamu dan bawa pulang glory bersama komunitas.</p>
+          <div class="event-meta">
+            <span>🕗 20:00 WIB</span>
+            <span>🎮 Mobile Legends</span>
+            <span>👥 Open for all members</span>
+          </div>
+          <a href="https://discord.gg/westline" target="_blank" class="event-btn">Join Event</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section id="leaderboard">
+      <div class="leaderboard-header">
+        <p class="section-label">Community</p>
+        <h2 class="section-title">Recognized Presence</h2>
+        <p class="leaderboard-sub">Member terbaik yang membuat Westline tetap hidup.</p>
+      </div>
+      <div class="leaderboard-grid">
+        <div class="lb-card">
+          <div class="lb-card-header">
+            <span class="lb-icon">🏆</span>
+            <h3 class="lb-title">Top Aktif</h3>
+            <p class="lb-desc">Member paling aktif bulan ini</p>
+          </div>
+          <div class="lb-list">
+            <div class="lb-row"><span class="lb-rank rank-1">1</span><div class="lb-avatar" style="background:linear-gradient(135deg,#7A1C24,#3a0d12);">🥇</div><div class="lb-info"><p class="lb-name">aksa</p><p class="lb-username">@m.diniiii</p></div><span class="lb-badge">👑</span></div>
+            <div class="lb-row"><span class="lb-rank rank-2">2</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">𝐊𝔞𝔯𝔰𝔢𝔫</p><p class="lb-username">@ciggaretsafterincident</p></div></div>
+            <div class="lb-row"><span class="lb-rank rank-3">3</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥉</div><div class="lb-info"><p class="lb-name">Sean</p><p class="lb-username">@alza7</p></div></div>
+            <div class="lb-row"><span class="lb-rank">4</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🏆</div><div class="lb-info"><p class="lb-name">𝒞athyna</p><p class="lb-username">@walldorft</p></div></div>
+            <div class="lb-row"><span class="lb-rank">5</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🏆</div><div class="lb-info"><p class="lb-name">Cy Salvatore</p><p class="lb-username">@icy_sxy</p></div></div>
+          </div>
+        </div>
+        <div class="lb-card">
+          <div class="lb-card-header">
+            <span class="lb-icon">💎</span>
+            <h3 class="lb-title">Top Booster</h3>
+            <p class="lb-desc">Member yang mendukung server</p>
+          </div>
+          <div class="lb-list">
+            <div class="lb-row"><span class="lb-rank rank-1">1</span><div class="lb-avatar" style="background:linear-gradient(135deg,#5a1a5a,#3a0a3a);">🥇</div><div class="lb-info"><p class="lb-name">aksa</p><p class="lb-username">@m.diniiii</p></div><span class="lb-badge">⚡</span></div>
+            <div class="lb-row"><span class="lb-rank rank-2">2</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">Alza</p><p class="lb-username">@alza7</p></div></div>
+            <div class="lb-row"><span class="lb-rank rank-3">3</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥉</div><div class="lb-info"><p class="lb-name">𝒞athyna</p><p class="lb-username">@walldorft</p></div></div>
+            <div class="lb-row"><span class="lb-rank">4</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">💎</div><div class="lb-info"><p class="lb-name">Ayrine</p><p class="lb-username">@me_you10</p></div></div>
+            <div class="lb-row"><span class="lb-rank">5</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">💎</div><div class="lb-info"><p class="lb-name">Hanzel</p><p class="lb-username">@griezzzlyyyw</p></div></div>
+          </div>
+        </div>
+        <div class="lb-card">
+          <div class="lb-card-header">
+            <span class="lb-icon">🎖️</span>
+            <h3 class="lb-title">Donatur</h3>
+            <p class="lb-desc">Supporter setia Westline</p>
+          </div>
+          <div class="lb-list">
+            <div class="lb-row"><span class="lb-rank rank-1">1</span><div class="lb-avatar" style="background:linear-gradient(135deg,#7A1C24,#3a0d12);">🥇</div><div class="lb-info"><p class="lb-name">Alza</p><p class="lb-username">@alza7</p></div><span class="lb-badge">💫</span></div>
+            <div class="lb-row"><span class="lb-rank rank-2">2</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">aksa</p><p class="lb-username">@m.diniiii</p></div></div>
+             <div class="lb-row"><span class="lb-rank rank-3">3</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">𝒞athyna</p><p class="lb-username">@walldorft</p></div></div>
+          </div>
+          <a href="https://discord.gg/westline" target="_blank" class="lb-donate-btn">Support Server</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUARDIAN TABLE -->
+    <section id="guardian-roles">
+      <div class="staff-divider"><span>Guardian &amp; Roles</span></div>
+      <div class="staff-table">
+        <div class="table-row table-header-row">
+          <span>Member</span>
+          <span>Role</span>
+          <span>Status</span>
+        </div>
+        <div class="table-row" data-name="vاто" data-username="@e4sttt_" data-discord-id="752055488698515457" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian1.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">vاто</p><p class="table-username">@e4sttt_</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="K e v v y" data-username="@kev1arss" data-discord-id="560068892047835136" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian5.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">K e v v y</p><p class="table-username">@kev1arss</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="Michelly" data-username="@kannaira" data-discord-id="1249790935932600421" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian4.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Michelly</p><p class="table-username">@kannaira</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="Icy" data-username="@icyycy_077" data-discord-id="1347847842521157654" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian3.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Icy</p><p class="table-username">@icyycy_077</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="Han" data-username="@griezzzlyyyw" data-discord-id="1474822259016470598" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian2.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Han</p><p class="table-username">@griezzzlyyyw</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="Cel" data-username="@blushberrie" data-discord-id="1375838007076061376" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian6.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Cel</p><p class="table-username">@blushberrie</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+        <div class="table-row" data-name="The South" data-username="@leyyrin" data-discord-id="1375838007076061377" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian7.png">
+          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">The South</p><p class="table-username">@leyyrin</p></div></div>
+          <span class="staff-role staff-role-guardian">Guardian</span>
+          <span class="table-status table-status-active">Active</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLES TABLE -->
+    <section id="roles">
+      <div class="roles-header">
+        <p class="section-label">Community</p>
+        <h2 class="section-title">Roles &amp<br>Community.</h2>
+        <p class="roles-sub">Semua role di Westline dan komunitas yang ada.</p>
+      </div>
+      <div class="role-table-wrapper">
+        <table class="role-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Description</th>
+              <th>Access</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#C4404E;"></span>Founder</td><td>Owner &amp; creator of Westline</td><td><span class="access-badge full">Full Access</span></td><td>2</td></tr>
+            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#9B7FD4;"></span>Council</td><td>Main administrator team</td><td><span class="access-badge admin">Admin</span></td><td>1</td></tr>
+            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#52B46B;"></span>Moderator</td><td>Server moderation &amp; safety</td><td><span class="access-badge mod">Mod</span></td><td>1</td></tr>
+            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#5B8FD4;"></span>Guardian</td><td>server security</td><td><span class="access-badge member">Staff</span></td><td>7</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#d4a017;"></span>VIP</td><td>Special status members</td><td><span class="access-badge member">Member+</span></td><td>—</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#8888aa;"></span>Eternals</td><td>Trusted active members & Long-term loyal members</td><td><span class="access-badge member">Member</span></td><td>1</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#E080C0;"></span>Booster</td><td>Supports the server with boosts</td><td><span class="access-badge boost">Boost Perks</span></td><td>16</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#c06060;"></span>Vanguard</td><td>Veteran community members</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#60aacc;"></span>Tag Holder</td><td>Exclusive tag owners</td><td><span class="access-badge member">Member</span></td><td>46</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#5588ff;"></span>Nocturnal West</td><td>Night culture community</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#aacc66;"></span>Dawn Chaser</td><td>Morning &amp; daytime active members</td><td><span class="access-badge member">Member</span></td><td>—</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#cc8844;"></span>After-Hours</td><td>Late-night active community</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#ff88aa;"></span>Couple Dream</td><td>Relationship role</td><td><span class="access-badge member">Member</span></td><td>4</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#ffaacc;"></span>Cuties</td><td>Female Verif role</td><td><span class="access-badge member">Member</span></td><td>15</td></tr>
+            <tr class="role-row"><td><span class="role-dot" style="background:#888888;"></span>W-Gangs</td><td>Main public member role</td><td><span class="access-badge base">Base</span></td><td>250</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section id="join">
+      <div class="join-container">
+        <div class="join-glow"></div>
+        <p class="section-label" style="justify-content:center;">Join Us</p>
+        <h2 class="join-title">Become Part<br>of Westline.</h2>
+        <p class="join-desc">Join the community dan rasakan sendiri atmosfernya. Ambil role kamu, masuk VC, dan jadilah bagian dari Westline.</p>
+        <a href="https://discord.gg/westline" target="_blank" class="btn-primary">Join Discord</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <a href="#" class="footer-logo">
+            <img src="Logo_Server.png" alt="Westline">
+            <span>WESTLINE</span>
+          </a>
+          <p class="footer-tagline">Modern Urban Lounge</p>
+        </div>
+        <div class="footer-center">
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#join">Join</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <a href="https://discord.gg/westline" target="_blank" class="footer-social">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Westline. All rights reserved.</p>
+      </div>
+
+    </footer>
+
+  </div><!-- end main-content -->
+
+  <!-- STAFF MODAL -->
+  <div id="staff-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-banner" id="modal-banner"></div>
+      <div class="modal-body">
+        <div class="modal-avatar-wrap">
+          <div class="modal-avatar" id="modal-avatar"></div>
+        </div>
+        <p class="modal-name" id="modal-name"></p>
+        <p class="modal-username" id="modal-username"></p>
+        <div class="modal-role-badge" id="modal-role-badge"></div>
+        <div class="modal-divider"></div>
+        <p class="modal-bio" id="modal-bio"></p>
+        <a href="#" id="modal-discord" target="_blank" class="modal-btn">💬 Message di Discord</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
