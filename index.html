@@ -19,12 +19,21 @@
       <span class="nav-logo-text">Westline</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#gallery">Feel the Vibe</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#join">Join</a></li>
+  <li><a href="#" class="active">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#gallery">Feel the Vibe</a></li>
+  <li><a href="#events">Events</a></li>
+  <li><a href="#support-server">Support</a></li>
+
+  <!-- Founder/Admin Only -->
+  <li>
+    <a href="https://panel.westlinehub.com">
+    SERVER MANAGEMENT
+    </a>
+</li>
+
+  <li><a href="#join">Join</a></li>
     </ul>
     <a href="https://discord.gg/westline" target="_blank" class="nav-cta nav-cta-desktop">Join Discord</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
@@ -42,7 +51,14 @@
       <li><a href="#features" onclick="closeMobileMenu()">Features</a></li>
       <li><a href="#gallery" onclick="closeMobileMenu()">Feel the Vibe</a></li>
       <li><a href="#events" onclick="closeMobileMenu()">Events</a></li>
+      <li><a href="#support-server" onclick="closeMobileMenu()">Support</a></li>
       <li><a href="#join" onclick="closeMobileMenu()">Join</a></li>
+
+  <li>
+    <a href="https://panel.westlinehub.com" onclick="closeMobileMenu()">
+    Server Management
+    </a>
+  </li>
     </ul>
     <a href="https://discord.gg/westline" target="_blank" class="nav-cta mobile-cta">Join Discord</a>
   </div>
@@ -149,7 +165,7 @@
           <img src="council1.png" class="showcase-image">
           <div class="showcase-overlay"></div>
           <div class="showcase-content">
-            <span class="showcase-role council">Council</span>
+            <span class="showcase-role admin">Admin</span>
             <h3>aksa.</h3>
             <p class="showcase-user">@m.diniiii</p>
             <div class="showcase-line"></div>
@@ -213,6 +229,22 @@
             <p class="about-card-tag">Modern Urban Lounge</p>
             <div class="about-card-line"></div>
             <p class="about-card-quote">"Masuk, ambil role kalian, join VC, nikmati music session, dan jadilah bagian dari Westline."</p>
+            <div class="about-stats">
+              <div class="about-stat-box">
+                <span class="about-stat-icon">👥</span>
+                <div>
+                  <p class="about-stat-num" id="stat-members">—</p>
+                  <p class="about-stat-label">Total Member</p>
+                </div>
+              </div>
+              <div class="about-stat-box">
+                <span class="about-stat-icon about-stat-dot"></span>
+                <div>
+                  <p class="about-stat-num" id="stat-online">—</p>
+                  <p class="about-stat-label">Sedang Online</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -260,48 +292,10 @@
         <h2 class="section-title">Feel the Vibe</h2>
         <p class="gallery-sub">Bukan sekadar server — ini sebuah suasana.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <img src="gallery1.png" alt="Late Night VC" class="gallery-photo">
-            <div class="gallery-city-lights"></div>
-          </div>
-          <div class="gallery-caption">
-            <span>Late Night VC</span>
-            <p>Tempat terbaik untuk ngobrol larut malam</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <img src="gallery2.png" alt="Rooftop Vibes" class="gallery-photo">
-            <div class="gallery-city-lights"></div>
-          </div>
-          <div class="gallery-caption">
-            <span>Rooftop Vibes</span>
-            <p>Urban lounge, anytime, nongkrong</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <img src="gallery3.png" alt="Music Session" class="gallery-photo">
-            <div class="gallery-city-lights"></div>
-          </div>
-          <div class="gallery-caption">
-            <span>Music Session</span>
-            <p>Playlist curated, chill sepanjang malam</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <img src="gallery4.png" alt="Community Night" class="gallery-photo">
-            <div class="gallery-city-lights"></div>
-          </div>
-          <div class="gallery-caption">
-            <span>Community Night</span>
-            <p>Mabar, ngobrol, connect</p>
-          </div>
-        </div>
-      </div>
+      <!-- Foto & deskripsi di-render otomatis dari galleryData di script.js —
+           tinggal tambah item baru di array itu untuk menambah foto galeri. -->
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <p class="gallery-hint">Klik foto untuk memperbesar</p>
     </section>
 
     <!-- EVENTS -->
@@ -378,95 +372,76 @@
             <div class="lb-row"><span class="lb-rank rank-2">2</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">aksa</p><p class="lb-username">@m.diniiii</p></div></div>
              <div class="lb-row"><span class="lb-rank rank-3">3</span><div class="lb-avatar" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a);">🥈</div><div class="lb-info"><p class="lb-name">𝒞athyna</p><p class="lb-username">@walldorft</p></div></div>
           </div>
-          <a href="https://discord.gg/westline" target="_blank" class="lb-donate-btn">Support Server</a>
         </div>
       </div>
     </section>
 
-    <!-- GUARDIAN TABLE -->
+    <!-- GUARDIAN CAROUSEL (merged Guardian & Roles) -->
     <section id="guardian-roles">
-      <div class="staff-divider"><span>Guardian &amp; Roles</span></div>
-      <div class="staff-table">
-        <div class="table-row table-header-row">
-          <span>Member</span>
-          <span>Role</span>
-          <span>Status</span>
-        </div>
-        <div class="table-row" data-name="vاто" data-username="@e4sttt_" data-discord-id="752055488698515457" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian1.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">vاто</p><p class="table-username">@e4sttt_</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="K e v v y" data-username="@kev1arss" data-discord-id="560068892047835136" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian7.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">K e v v y</p><p class="table-username">@kev1arss</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="Michelly" data-username="@kannaira" data-discord-id="1249790935932600421" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian6.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Michelly</p><p class="table-username">@kannaira</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="Icy" data-username="@icyycy_077" data-discord-id="1347847842521157654" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian3.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Icy</p><p class="table-username">@icyycy_077</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="Han" data-username="@griezzzlyyyw" data-discord-id="1474822259016470598" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian2.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Han</p><p class="table-username">@griezzzlyyyw</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="Cel" data-username="@blushberrie" data-discord-id="1375838007076061376" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian5.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">Cel</p><p class="table-username">@blushberrie</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
-        <div class="table-row" data-name="The South" data-username="@leyyrin" data-discord-id="1375838007076061377" data-role="Guardian" data-role-type="guardian" data-bio="Server safety" data-color="135deg, #1a1a2a, #2a2a4a" data-photo="guardian4.png">
-          <div class="table-member"><div class="table-avatar" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a);">🛡️</div><div><p class="table-name">The South</p><p class="table-username">@leyyrin</p></div></div>
-          <span class="staff-role staff-role-guardian">Guardian</span>
-          <span class="table-status table-status-active">Active</span>
-        </div>
+      <div class="roles-header">
+        <p class="section-label">Staff</p>
+        <h2 class="section-title">Staff<br>Roles.</h2>
+        <p class="roles-sub">Tim yang menjaga kenyamanan dan moderasi Westline, siap membantu kapan saja.</p>
+      </div>
+
+      <!-- Card di-render otomatis dari staffRolesData di script.js —
+           tinggal tambah objek baru di array itu untuk menambah staff baru
+           (Moderator, Event Organizer, Creative Team, dll). -->
+      <div class="guardian-carousel">
+        <div class="guardian-track" id="guardian-track"></div>
       </div>
     </section>
 
-    <!-- ROLES TABLE -->
-    <section id="roles">
-      <div class="roles-header">
-        <p class="section-label">Community</p>
-        <h2 class="section-title">Roles &amp;<br>Community.</h2>
-        <p class="roles-sub">Semua role di Westline dan komunitas yang ada.</p>
+
+<!-- SUPPORT SERVER -->
+<section id="support-server">
+  <div class="support-redirect-header">
+    <p class="section-label">Support Server</p>
+    <h2 class="section-title">Donasi dan membership<br>dibuka di website terpisah.</h2>
+    <p class="support-redirect-sub">Website utama tetap fokus untuk branding dan komunitas Westline. Saat member ingin berdonasi atau membeli premium, mereka diarahkan ke halaman support khusus.</p>
+  </div>
+
+  <div class="support-redirect-card">
+    <div class="support-redirect-glow"></div>
+    <div class="support-redirect-copy">
+      <p class="support-kicker">Coming Soon</p>
+      <h3>Portal donasi Westline segera hadir</h3>
+      <p>
+        Di halaman terpisah ini nanti Anda bisa menaruh form donasi, payment gateway,
+        membership premium, statistik donatur, dan dashboard transaksi tanpa mengganggu website utama.
+      </p>
+
+      <div class="support-redirect-list">
+        <div class="support-redirect-item">
+          <strong>Donasi komunitas</strong>
+          <span>QRIS, e-wallet, dan notifikasi donasi</span>
+        </div>
+        <div class="support-redirect-item">
+          <strong>Membership premium</strong>
+          <span>Silver, Gold, Elite dengan benefit Discord</span>
+        </div>
+        <div class="support-redirect-item">
+          <strong>Statistik & leaderboard</strong>
+          <span>Progress target dan riwayat supporter</span>
+        </div>
       </div>
-      <div class="role-table-wrapper">
-        <table class="role-table">
-          <thead>
-            <tr>
-              <th>Role</th>
-              <th>Description</th>
-              <th>Access</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#C4404E;"></span>Founder</td><td>Owner &amp; creator of Westline</td><td><span class="access-badge full">Full Access</span></td><td>2</td></tr>
-            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#9B7FD4;"></span>Council</td><td>Main administrator team</td><td><span class="access-badge admin">Admin</span></td><td>1</td></tr>
-            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#52B46B;"></span>Moderator</td><td>Server moderation &amp; safety</td><td><span class="access-badge mod">Mod</span></td><td>1</td></tr>
-            <tr class="role-row tier-special"><td><span class="role-dot" style="background:#5B8FD4;"></span>Guardian</td><td>server security</td><td><span class="access-badge member">Staff</span></td><td>7</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#d4a017;"></span>VIP</td><td>Special status members</td><td><span class="access-badge member">Member+</span></td><td>—</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#8888aa;"></span>Eternals</td><td>Trusted active members & Long-term loyal members</td><td><span class="access-badge member">Member</span></td><td>1</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#E080C0;"></span>Booster</td><td>Supports the server with boosts</td><td><span class="access-badge boost">Boost Perks</span></td><td>16</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#c06060;"></span>Vanguard</td><td>Veteran community members</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#60aacc;"></span>Tag Holder</td><td>Exclusive tag owners</td><td><span class="access-badge member">Member</span></td><td>46</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#5588ff;"></span>Nocturnal West</td><td>Night culture community</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#aacc66;"></span>Dawn Chaser</td><td>Morning &amp; daytime active members</td><td><span class="access-badge member">Member</span></td><td>—</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#cc8844;"></span>After-Hours</td><td>Late-night active community</td><td><span class="access-badge member">Member</span></td><td>3</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#ff88aa;"></span>Couple Dream</td><td>Relationship role</td><td><span class="access-badge member">Member</span></td><td>4</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#ffaacc;"></span>Cuties</td><td>Female Verif role</td><td><span class="access-badge member">Member</span></td><td>15</td></tr>
-            <tr class="role-row"><td><span class="role-dot" style="background:#888888;"></span>W-Gangs</td><td>Main public member role</td><td><span class="access-badge base">Base</span></td><td>250</td></tr>
-          </tbody>
-        </table>
+    </div>
+
+    <div class="support-redirect-action">
+      <div class="support-coming-soon-box">
+        <span class="support-coming-soon-icon">🚧</span>
+        <div>
+          <p class="support-coming-soon-title">Segera Hadir</p>
+          <p class="support-coming-soon-sub">Halaman support sedang dalam pengembangan</p>
+        </div>
       </div>
-    </section>
+      <span class="btn-primary support-redirect-btn support-btn-disabled" aria-disabled="true">
+        Coming Soon
+      </span>
+      <p class="support-note">Kami sedang menyiapkan halaman ini. Pantau terus pengumuman resmi di server Discord.</p>
+    </div>
+  </div>
+</section>
 
     <!-- JOIN CTA -->
     <section id="join">
@@ -496,6 +471,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a href="#support-server">Support</a></li>
             <li><a href="#join">Join</a></li>
           </ul>
         </div>
@@ -528,6 +504,17 @@
         <a href="#" id="modal-discord" target="_blank" class="modal-btn">💬 Message di Discord</a>
       </div>
     </div>
+  </div>
+
+  <!-- GALLERY LIGHTBOX -->
+  <div id="gallery-lightbox" class="lightbox-overlay">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Tutup">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Sebelumnya">←</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Berikutnya">→</button>
   </div>
 
   <script src="script.js"></script>
