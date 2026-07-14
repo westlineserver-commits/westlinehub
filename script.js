@@ -240,7 +240,7 @@ const staffRolesData = [
   { name: "Cel",         username: "@blushberrie",         discordId: "1375838007076061376", role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "cel.png", color: "135deg, #1a1a2a, #2a2a4a" },
 
   { name: "Xionaa",       username: "@l1lacwh1spers",  discordId: "1237957923301490788", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "xiona.png", color: "135deg, #1a1a2a, #2a2a4a" },
-  { name: "mercyjane",       username: "@porscheyy",  discordId: "1358065149193486508", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "eo.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  { name: "mercyjane",       username: "@porscheyy",  discordId: "1358065149193486508", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "mj.png", color: "135deg, #1a1a2a, #2a2a4a" },
    { name: "Xjuaa",       username: "@riffletoe",  discordId: "1455933567057268869", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "jua.png", color: "135deg, #1a1a2a, #2a2a4a" },
   // Contoh cara nambah Event Organizer / Creative Team — tinggal isi data asli lalu hapus baris "// " di depan:
   // { name: "Nama EO",       username: "@username",  discordId: "1234567890", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "namafile.png", color: "135deg, #1a1a2a, #2a2a4a" },
