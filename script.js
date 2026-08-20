@@ -156,9 +156,10 @@ const roleStyles = {
   founder:  { bg: 'rgba(122,28,36,0.25)',  color: '#c9626e', border: 'rgba(122,28,36,0.4)' },
   admin:    { bg: 'rgba(80,40,120,0.2)',   color: '#a080d0', border: 'rgba(80,40,120,0.35)' },
   mod:      { bg: 'rgba(30,90,50,0.2)',    color: '#60b878', border: 'rgba(30,90,50,0.35)' },
-  guardian: { bg: 'rgba(30,60,100,0.2)',   color: '#6090d0', border: 'rgba(30,60,100,0.35)' },
+  Security: { bg: 'rgba(30,60,100,0.2)',   color: '#6090d0', border: 'rgba(30,60,100,0.35)' },
   eo:       { bg: 'rgba(140,110,20,0.2)',  color: '#d4a843', border: 'rgba(140,110,20,0.35)' },
-  creative: { bg: 'rgba(20,110,105,0.2)',  color: '#45b8b0', border: 'rgba(20,110,105,0.35)' },
+  creative: { bg: 'rgba(20,110,105,0.2)',  color: '#45b858', border: 'rgba(20,110,105,0.35)' },
+  partner: { bg: 'rgba(20,110,105,0.2)',  color: '#3f00d2', border: 'rgba(20,110,105,0.35)' },
 };
 
 function openModal(card) {
@@ -229,21 +230,23 @@ document.querySelectorAll('.inti-card').forEach(card => {
   }
 });
 
-// ─── STAFF ROLES CAROUSEL — data-driven (tinggal tambah objek baru di array
-//     ini untuk menambah staff baru: Moderator, Event Organizer, Creative Team, dll) ───
-// roleType yang sudah ada style-nya: "mod", "eo", "creative", "guardian"
+// ─── STAFF ROLES CAROUSEL 
+
 const staffRolesData = [
   { name: "Lyn",       username: "@lyn_lyn_0",             discordId: "1248581171936362557",  role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "lilin.png", color: "135deg, #1a1a2a, #2a2a4a" },
   { name: "Sheana",   username: "@kyoceans",            discordId: "758841242934050869",  role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "sonya.png", color: "135deg, #1a1a2a, #2a2a4a" },
   { name: "Dio",    username: "@rrdio",            discordId: "1384736078816219168", role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "dio.png", color: "135deg, #1a1a2a, #2a2a4a" },
   { name: "Lea",         username: "@fllowwiiee2",          discordId: "1303390731427250199", role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "lea.png", color: "135deg, #1a1a2a, #2a2a4a" },
-  { name: "Cel",         username: "@blushberrie",         discordId: "1375838007076061376", role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "cel.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  
 
   { name: "Xionaa",       username: "@l1lacwh1spers",  discordId: "1237957923301490788", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "xiona.png", color: "135deg, #1a1a2a, #2a2a4a" },
   { name: "mercyjane",       username: "@porscheyy",  discordId: "1358065149193486508", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "mj.png", color: "135deg, #1a1a2a, #2a2a4a" },
-  { name: "Xjuaa",       username: "@riffletoe",  discordId: "1455933567057268869", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "jua.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  { name: "ganice",       username: "@chiaolie",  discordId: "1391218087457591326", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "ganice.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  
+  { name: "acha", username: "@cha1nee",  discordId: "1226084690486759455", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "aca.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  { name: "Zhang~", username: "@imfaldhee",  discordId: "324027990726017034", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "zhang.png", color: "135deg, #1a1a2a, #2a2a4a" },
 
-  // { name: "Nama Creative", username: "@username",  discordId: "1234567890", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "namafile.png", color: "135deg, #1a1a2a, #2a2a4a" },
+  { name: "san", username: "@sanmorinyo",  discordId: "1516394190861369456", role: "Partner Team",   roleType: "partner", bio: "Collaboration Team", photo: "san.png", color: "135deg, #1a1a2a, #2a2a4a" },
 ];
 
 function renderStaffRoles() {
@@ -393,8 +396,6 @@ function createElectricBorder(card, borderColor = '#c9626e') {
 const roleColors = {
   founder:  '#c9626e',
   admin:    '#a080d0',
-  mod:      '#60b878',
-  guardian: '#6090d0',
 };
 
 document.querySelectorAll('.inti-card').forEach(card => {
