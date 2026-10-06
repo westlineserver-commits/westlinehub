@@ -41,11 +41,11 @@ if (exploreBtn) {
 // ─── GALLERY — data-driven (tinggal tambah objek baru di array ini
 //     untuk menambah foto galeri baru, lengkap dengan judul & deskripsi) ───
 const galleryData = [
-  { photo: "gallery1.webp", title: "Late Night VC",   desc: "Tempat terbaik untuk ngobrol larut malam" },
-  { photo: "gallery2.webp", title: "Rooftop Vibes",    desc: "Urban lounge, anytime, nongkrong" },
-  { photo: "gallery3.webp", title: "Music Session",    desc: "Playlist curated, chill sepanjang malam" },
-  { photo: "gallery4.webp", title: "Community Night",  desc: "Mabar, ngobrol, connect" },
-  { photo: "gallery5.webp", title: "Chill Together",   desc: "Suasana santai, obrolan yang gak ada habisnya" },
+  { photo: "gallery1.png", title: "Late Night VC",   desc: "Tempat terbaik untuk ngobrol larut malam" },
+  { photo: "gallery2.png", title: "Rooftop Vibes",    desc: "Urban lounge, anytime, nongkrong" },
+  { photo: "gallery3.png", title: "Music Session",    desc: "Playlist curated, chill sepanjang malam" },
+  { photo: "gallery4.png", title: "Community Night",  desc: "Mabar, ngobrol, connect" },
+  { photo: "gallery5.png", title: "Chill Together",   desc: "Suasana santai, obrolan yang gak ada habisnya" },
 ];
 
 function renderGallery() {
@@ -109,17 +109,24 @@ document.querySelectorAll('.section-label, .staff-kicker').forEach(el => {
 
 // ─── DISCORD WIDGET STATS ───
 async function fetchDiscordStats() {
-  const members = document.getElementById('stat-members');
-  const online  = document.getElementById('stat-online');
   try {
-    // Invite API: memberi total member & online (widget.json tidak punya member_count)
-    const res = await fetch('https://discord.com/api/v10/invites/westline?with_counts=true');
-    if (!res.ok) throw new Error('Invite API error ' + res.status);
-    const d = await res.json();
-    if (members) members.textContent = d.approximate_member_count ?? '—';
-    if (online)  online.textContent  = d.approximate_presence_count ?? '—';
+    const res = await fetch(
+      'https://discord.com/api/guilds/1499129465291407483/widget.json'
+    );
+
+    if (!res.ok) throw new Error('Widget not enabled');
+
+    const data = await res.json();
+
+    const members = document.getElementById('stat-members');
+    const online  = document.getElementById('stat-online');
+
+    if (members) members.textContent = data.member_count ?? '—';
+    if (online)  online.textContent  = data.presence_count ?? '—';
+
   } catch (err) {
-    console.warn('Gagal ambil statistik Discord:', err.message);
+    console.warn('Discord widget tidak aktif:', err.message);
+
   }
 }
 
@@ -165,7 +172,7 @@ function openModal(card) {
   const color     = card.dataset.color;
   const photo     = card.dataset.photo;
   const initial   = name.charAt(0).toUpperCase();
-  const style     = roleStyles[roleType] || roleStyles.mod;
+  const style     = roleStyles[roleType] || roleStyles.guardian;
 
   // Banner
   document.getElementById('modal-banner').style.background = `linear-gradient(${color})`;
@@ -173,7 +180,7 @@ function openModal(card) {
   // Avatar — foto atau inisial
   const avatarEl = document.getElementById('modal-avatar');
   if (photo) {
-    avatarEl.innerHTML = `<img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    avatarEl.innerHTML = `<img src="${photo}" alt="${name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
     avatarEl.style.background = 'transparent';
   } else {
     avatarEl.innerHTML = initial;
@@ -195,6 +202,12 @@ function openModal(card) {
   modal.classList.add('active');
 }
 
+// Inti cards (Founder, Council, Mod)
+document.querySelectorAll('.inti-card').forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => openModal(card));
+});
+
 // Guardian carousel cards — event delegation
 document.addEventListener('click', (e) => {
   const card = e.target.closest('.guardian-card');
@@ -206,10 +219,18 @@ modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.classList.remove('active');
 });
 
+// ─── TAMPILKAN FOTO DI INTI CARD ───
+document.querySelectorAll('.inti-card').forEach(card => {
+  const photo = card.dataset.photo;
+  const avatarEl = card.querySelector('.inti-avatar');
+  if (photo && avatarEl) {
+    avatarEl.innerHTML = `<img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    avatarEl.style.background = 'transparent';
+    avatarEl.style.padding = '0';
+  }
+});
 
 // ─── STAFF ROLES CAROUSEL 
-
-const esc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 
 const staffRolesData = [
   { name: "Lyn",       username: "@lyn_lyn_0",             discordId: "1248581171936362557",  role: "Moderator", roleType: "mod", bio: "Server moderation & safety", photo: "lilin.png", color: "135deg, #1a1a2a, #2a2a4a" },
@@ -220,7 +241,7 @@ const staffRolesData = [
 //{ name: "mercyjane",       username: "@porscheyy",  discordId: "1358065149193486508", role: "Event Organizer", roleType: "eo",       bio: "Mengatur event & acara Westline",     photo: "mj.png", color: "135deg, #1a1a2a, #2a2a4a" },
   
   { name: "acha", username: "@cha1nee",  discordId: "1226084690486759455", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "aca.png", color: "135deg, #1a1a2a, #2a2a4a" },
-  { name: "Zhang~", username: "@imfaldhee",  discordId: "324027990726017034", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "zhang.webp", color: "135deg, #1a1a2a, #2a2a4a" },
+  { name: "Zhang~", username: "@imfaldhee",  discordId: "324027990726017034", role: "Creative Team",   roleType: "creative", bio: "Desain, konten, dan visual Westline", photo: "zhang.png", color: "135deg, #1a1a2a, #2a2a4a" },
 ];
 
 function renderStaffRoles() {
@@ -229,14 +250,14 @@ function renderStaffRoles() {
 
   const cardHTML = (item, hidden) => `
     <div class="guardian-card"${hidden ? ' aria-hidden="true"' : ''}
-         data-name="${esc(item.name)}" data-username="${esc(item.username)}"
-         data-discord-id="${esc(item.discordId)}" data-role="${esc(item.role)}"
-         data-role-type="${esc(item.roleType)}" data-bio="${esc(item.bio)}"
-         data-color="${esc(item.color)}" data-photo="${esc(item.photo)}">
-      <img src="${esc(item.photo)}" alt="${hidden ? '' : item.name}" class="guardian-card-photo" loading="lazy">
+         data-name="${item.name}" data-username="${item.username}"
+         data-discord-id="${item.discordId}" data-role="${item.role}"
+         data-role-type="${item.roleType}" data-bio="${item.bio}"
+         data-color="${item.color}" data-photo="${item.photo}">
+      <img src="${item.photo}" alt="${hidden ? '' : item.name}" class="guardian-card-photo" loading="lazy">
       <div class="guardian-card-overlay"></div>
       <div class="guardian-card-info">
-        <span class="showcase-role ${esc(item.roleType)}">${item.role}</span>
+        <span class="showcase-role ${item.roleType}">${item.role}</span>
         <p class="guardian-card-name">${item.name}</p>
         <p class="guardian-card-user">${item.username}</p>
       </div>
@@ -249,6 +270,142 @@ function renderStaffRoles() {
 }
 
 renderStaffRoles();
+
+// ─── ELECTRIC BORDER ───
+function createElectricBorder(card, borderColor = '#c9626e') {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 10;
+  `;
+  card.style.position = 'relative';
+  card.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let time = 0, last = 0;
+  const chaos = 0.045, speed = 0.45, displacement = 3, borderOffset = 0;
+
+  function noise2D(x, y) {
+    const i = Math.floor(x), j = Math.floor(y);
+    const fx = x - i, fy = y - j;
+    const r = v => (Math.sin(v * 12.9898) * 43758.5453) % 1;
+    const a = r(i+j*57), b = r(i+1+j*57), c = r(i+(j+1)*57), d = r(i+1+(j+1)*57);
+    const ux = fx*fx*(3-2*fx), uy = fy*fy*(3-2*fy);
+    return a*(1-ux)*(1-uy) + b*ux*(1-uy) + c*(1-ux)*uy + d*ux*uy;
+  }
+
+  function octNoise(x, t, seed) {
+    let y = 0, amp = chaos, freq = 10;
+    for (let i = 0; i < 6; i++) {
+      y += amp * noise2D(freq*x + seed*100, t*freq*0.3);
+      freq *= 1.6; amp *= 0.7;
+    }
+    return y;
+  }
+
+  function resize() {
+    const rect = card.getBoundingClientRect();
+    const w = rect.width, h = rect.height;
+    if (w === 0 || h === 0) return { w: 200, h: 280 };
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { w, h };
+  }
+
+  let size = { w: 200, h: 280 };
+  setTimeout(() => { size = resize(); }, 100);
+
+  function getPoint(t, left, top, w, h, r) {
+    const sw = w-2*r, sh = h-2*r, ca = Math.PI*r/2;
+    const perim = 2*sw + 2*sh + 4*ca;
+    let d = t * perim, acc = 0;
+    const corner = (cx, cy, start, arc, p) => ({
+      x: cx + r * Math.cos(start + p*arc),
+      y: cy + r * Math.sin(start + p*arc)
+    });
+    if (d <= acc+sw) { const p=(d-acc)/sw; return {x:left+r+p*sw, y:top}; } acc+=sw;
+    if (d <= acc+ca) { return corner(left+w-r, top+r, -Math.PI/2, Math.PI/2, (d-acc)/ca); } acc+=ca;
+    if (d <= acc+sh) { const p=(d-acc)/sh; return {x:left+w, y:top+r+p*sh}; } acc+=sh;
+    if (d <= acc+ca) { return corner(left+w-r, top+h-r, 0, Math.PI/2, (d-acc)/ca); } acc+=ca;
+    if (d <= acc+sw) { const p=(d-acc)/sw; return {x:left+w-r-p*sw, y:top+h}; } acc+=sw;
+    if (d <= acc+ca) { return corner(left+r, top+h-r, Math.PI/2, Math.PI/2, (d-acc)/ca); } acc+=ca;
+    if (d <= acc+sh) { const p=(d-acc)/sh; return {x:left, y:top+h-r-p*sh}; } acc+=sh;
+    return corner(left+r, top+r, Math.PI, Math.PI/2, (d-acc)/ca);
+  }
+
+  function draw(now) {
+    const delta = (now - last) / 1000;
+    time += delta * speed;
+    last = now;
+
+    const { w, h } = size;
+    if (w === 0) { requestAnimationFrame(draw); return; }
+
+    ctx.clearRect(0, 0, w, h);
+
+    const left = borderOffset, top = borderOffset;
+    const bw = w - borderOffset*2, bh = h - borderOffset*2;
+    const radius = 8;
+    const samples = Math.floor((2*(bw+bh)) / 2);
+
+    [
+      { alpha: 0.12, lw: 8,   blur: 20 },
+      { alpha: 0.35, lw: 3,   blur: 10 },
+      { alpha: 0.7,  lw: 1.5, blur: 4  },
+      { alpha: 1,    lw: 0.8, blur: 1  },
+    ].forEach(({ alpha, lw, blur }) => {
+      ctx.save();
+      ctx.shadowBlur = blur * 3;
+      ctx.shadowColor = borderColor;
+      ctx.strokeStyle = borderColor;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = lw;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      for (let i = 0; i <= samples; i++) {
+        const p = i / samples;
+        const pt = getPoint(p, left, top, bw, bh, radius);
+        const dx = pt.x + octNoise(p*8, time, 0) * displacement;
+        const dy = pt.y + octNoise(p*8, time, 1) * displacement;
+        i === 0 ? ctx.moveTo(dx, dy) : ctx.lineTo(dx, dy);
+      }
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  new ResizeObserver(() => { size = resize(); }).observe(card);
+  requestAnimationFrame(draw);
+}
+
+// Apply electric border sesuai role
+const roleColors = {
+  founder:  '#c9626e',
+  admin:    '#a080d0',
+};
+
+document.querySelectorAll('.inti-card').forEach(card => {
+  const roleType = card.dataset.roleType || 'founder';
+  createElectricBorder(card, roleColors[roleType] || '#c9626e');
+});
+
+// Mouse glow effect
+document.querySelectorAll('.inti-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+  });
+});
 
 const staffData = [
   {
@@ -276,7 +433,7 @@ const staffData = [
     username:"@porscheyy",
     role:"Admin",
     roleClass:"admin",
-    image:"council1.webp",
+    image:"council1.png",
     discordId:"1358065149193486508",
     bio:"Core management team."
   },
@@ -468,6 +625,42 @@ if(showcase){
 updateCards();
 
 /* updateCards init sudah dipanggil di atas */
+
+const counters=
+document.querySelectorAll(
+".stat-num"
+);
+
+counters.forEach(counter=>{
+
+const target=
++counter.innerText;
+
+let count=0;
+
+const update=()=>{
+
+count+=Math.ceil(
+target/50
+);
+
+if(count<target){
+
+counter.innerText=count;
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+}
+
+update();
+
+});
 
 window.addEventListener("scroll",()=>{
 
