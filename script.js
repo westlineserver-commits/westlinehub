@@ -433,7 +433,7 @@ const staffData = [
     username:"@porscheyy",
     role:"Admin",
     roleClass:"admin",
-    image:"council1.png",
+    image:"Council1.png",
     discordId:"1358065149193486508",
     bio:"Core management team."
   },
