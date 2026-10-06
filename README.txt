@@ -1,9 +1,7 @@
-Westline main redirect site
-===========================
+Westline main site
+==================
 
-Konsep file ini:
-- Website utama tetap fokus untuk profil komunitas Westline.
-- Saat user scroll ke bagian Support Server, mereka diarahkan ke website support yang terpisah.
-- URL support yang sedang dipakai sekarang: http://localhost:3000
-
-Saat Anda sudah punya domain support final, ganti URL lokal tersebut ke domain asli Anda.
+- Website profil komunitas Westline (HTML/CSS/JS statis).
+- Section Support Server saat ini 'Coming Soon'. Saat portal donasi siap, ganti isi section #support-server.
+- Statistik member diambil dari invite Discord 'westline' (ubah kode invite di script.js jika berbeda).
+- Gambar besar sudah dikonversi ke WebP.
